@@ -1,6 +1,6 @@
 module.exports = {
-    devServer: {
+    /*devServer: {
         host: 'sayra.local',
         https: false
-    }
+    }*/
 }
