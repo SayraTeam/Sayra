@@ -24,47 +24,36 @@
 
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-thumbnail" src="img/img1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title 1</h5>
-              <p class="card-text">text 1</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card margin" style="width: 18rem;">
-            <img class="card-img-top img-thumbnail" src="img/img1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title 2</h5>
-              <p class="card-text">text 2</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card margin" style="width: 18rem;">
-            <img class="card-img-top img-thumbnail" src="img/img1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title 3</h5>
-              <p class="card-text">text 3</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+        <giphy-data
+          v-for="GD in getGiphyData"
+          v-bind:giphyData="GD"
+          v-bind:key="GD.id">
+        </giphy-data>
       </div>
     </div>
 </div>
 </template>
 <script>
+import GiphyData from './DataComponents/GiphyData';
+
 export default {
     name: 'Home',
+    components: {
+      GiphyData
+    },
     data: function() {
         return {
-            show: false
+            show: false,
+            giphyData: this.$store.state.Giphy
         }
+    },
+    mounted() {
+      this.$store.dispatch('GET_GHIPHY');
+    },
+    computed: {
+        getGiphyData: function() {
+            return this.$store.state.Giphy;
+        },
     },
     methods: {
       showMenu() {
