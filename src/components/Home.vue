@@ -48,7 +48,7 @@ export default {
         }
     },
     mounted() {
-      this.$store.dispatch('GET_GHIPHY');
+      this.$store.dispatch('GET_TRENDING_GIFS');
     },
     computed: {
         getGiphyData: function() {
