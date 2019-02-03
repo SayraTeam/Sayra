@@ -2,25 +2,16 @@
   "name": "sayra",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SayraTeam/Sayra.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SayraTeam/Sayra/issues"
-  },
-  "homepage": "https://github.com/SayraTeam/Sayra#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "exception_manager": "^1.1.1",
     "moment": "^2.23.0",
+    "register-service-worker": "^1.5.2",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.2",
@@ -28,8 +19,19 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-pwa": "^3.3.0",
     "@vue/cli-service": "^3.2.0",
     "@vue/test-utils": "^1.0.0-beta.26",
     "vue-template-compiler": "^2.5.17"
+  },
+  "bugs": {
+    "url": "https://github.com/SayraTeam/Sayra/issues"
+  },
+  "homepage": "https://github.com/SayraTeam/Sayra#readme",
+  "license": "ISC",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SayraTeam/Sayra.git"
   }
 }
