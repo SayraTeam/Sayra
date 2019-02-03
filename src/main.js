@@ -4,9 +4,9 @@ import Axios from 'axios';
 import VueAxios from 'vue-axios';
 import router from './router'
 import store from './store/index';
+import registerServiceWorker from './registerServiceWorker'
 
-Vue.use(VueAxios, Axios)
-Vue.config.productionTip = false;
+Vue.use(VueAxios, Axios, registerServiceWorker)
 
 new Vue({
     render: h => h(App),

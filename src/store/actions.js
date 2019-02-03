@@ -5,9 +5,8 @@ export default {
     GET_GHIPHY: ({ commit }) => {
         GhiphyService.getGiphy()
             .then(giphy => {
-                console.log(giphy.data.data);
                 let arrayGiphy = [];
-                giphy.data.data.forEach(element => {
+                giphy.data.forEach(element => {
                 let datetimeFR = moment(element.import_datetime).format('DD/MM/YYYY HH:mm');
                     arrayGiphy.push({
                         id: element.id,

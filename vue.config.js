@@ -1,6 +1,5 @@
 module.exports = {
-    /*devServer: {
-        host: 'sayra.local',
-        https: false
-    }*/
+    pwa: {
+      workboxPluginMode: 'InjectManifest'
+    }
 }

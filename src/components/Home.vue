@@ -4,12 +4,12 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" v-on:click="showMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Sayra</a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" :class="{show: show == true}">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="articles">Articles<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="articles">Giphe<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
