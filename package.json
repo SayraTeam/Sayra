@@ -5,7 +5,8 @@
   "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -19,9 +20,12 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-plugin-pwa": "^3.3.0",
+    "@vue/cli-plugin-pwa": "^3.4.0",
     "@vue/cli-service": "^3.2.0",
     "@vue/test-utils": "^1.0.0-beta.26",
+    "express": "^4.16.4",
+    "express-sslify": "^1.2.0",
+    "serve-static": "^1.13.2",
     "vue-template-compiler": "^2.5.17"
   },
   "bugs": {

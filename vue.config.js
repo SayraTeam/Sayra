@@ -1,5 +1,1 @@
-module.exports = {
-    pwa: {
-      workboxPluginMode: 'InjectManifest'
-    }
-}
+module.exports = {}
