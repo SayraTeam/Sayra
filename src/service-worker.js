@@ -19,12 +19,12 @@ workbox.setConfig({
   );
   
   //network request in cache
-  workbox.routing.registerRoute(
+  /*workbox.routing.registerRoute(
     new RegExp('http://localhost:8888/'),
     workbox.strategies.networkFirst({
       cacheName: 'api',
     }),
-  );
+  );*/
   
   //js and css in cache
   workbox.routing.registerRoute(
