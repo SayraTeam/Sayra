@@ -23,28 +23,38 @@
     </nav>
 
     <div class="container">
-      <div class="row">
+      <div class="row" v-if="this.$store.state.Giphy.length > 0">
         <giphy-data
           v-for="GD in getGiphyData"
           v-bind:giphyData="GD"
           v-bind:key="GD.id">
         </giphy-data>
       </div>
+      <div class="row d-flex justify-content-center" v-else>
+        <clip-loader :loading="spinner.loading" :color="spinner.color" :size="spinner.size"></clip-loader>
+      </div>
     </div>
 </div>
 </template>
 <script>
 import GiphyData from './DataComponents/GiphyData';
+import ClipLoader from 'vue-spinner/src/ClipLoader';
 
 export default {
     name: 'Home',
     components: {
-      GiphyData
+      GiphyData,
+      ClipLoader,
     },
     data: function() {
         return {
             show: false,
-            giphyData: this.$store.state.Giphy
+            giphyData: this.$store.state.Giphy,
+            spinner: {
+                loading: true,
+                color: '#d9534f',
+                size: '55px',
+            },
         }
     },
     mounted() {

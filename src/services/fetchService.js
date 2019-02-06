@@ -1,6 +1,6 @@
 const myHeaders = new Headers();
 export default {
-    fetchGET(url) {
+    async fetchGET(url) {
         let init = {
             method: 'GET',
             headers: myHeaders,
@@ -8,7 +8,7 @@ export default {
             cache: 'default',
         }
         let request = new Request(url, init);
-        return fetch(request, init)
+        return await    fetch(request, init)
         .then((response) => {
             if(response.ok) {
                 return response.json();
