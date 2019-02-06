@@ -39,5 +39,41 @@ export default {
             .catch(error => {
                 throw new Error(error);
             })
+    },
+    GET_RANDOM_GIFS: ({ commit }) => {
+        GhiphyService.getRandomGifs()
+            .then(giphy => {
+                let arrayGiphy = [];
+                console.log(giphy);
+                let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
+                arrayGiphy.push({
+                    id: giphy.data.id,
+                    title: giphy.data.title,
+                    date_import: datetimeFR,
+                    image: giphy.data.images.fixed_height,
+                });
+                commit('ADD_GIPHY', arrayGiphy);
+            })
+            .catch(error => {
+                throw new Error(error);
+            })
+    },
+    GET_STICKER: ({ commit }) => {
+        GhiphyService.getRandomSticker()
+            .then(giphy => {
+                let arrayGiphy = [];
+                console.log(giphy);
+                let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
+                arrayGiphy.push({
+                    id: giphy.data.id,
+                    title: giphy.data.title,
+                    date_import: datetimeFR,
+                    image: giphy.data.images.fixed_height,
+                });
+                commit('ADD_GIPHY', arrayGiphy);
+            })
+            .catch(error => {
+                throw new Error(error);
+            })
     }
 }

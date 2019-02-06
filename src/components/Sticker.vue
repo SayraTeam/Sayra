@@ -8,14 +8,14 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" :class="{show: show == true}">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="articles">Gifs<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Random">Random<span class="sr-only"></span></a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="articles">Gifs<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="random">Random<span class="sr-only"></span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sticker">Sticker<span class="sr-only"></span></a>
+            <a class="nav-link" href="Sticker">Sticker<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="row">
         <giphy-data
-          v-for="GD in getGiphyData"
+          v-for="GD in getRandomGiphyData"
           v-bind:giphyData="GD"
           v-bind:key="GD.id">
         </giphy-data>
@@ -43,7 +43,7 @@
 import GiphyData from './DataComponents/GiphyData';
 
 export default {
-    name: 'Home',
+    name: 'Random',
     components: {
       GiphyData
     },
@@ -54,10 +54,10 @@ export default {
         }
     },
     mounted() {
-      this.$store.dispatch('GET_TRENDING_GIFS');
+      this.$store.dispatch('GET_STICKER');
     },
     computed: {
-        getGiphyData: function() {
+        getRandomGiphyData: function() {
             return this.$store.state.Giphy;
         },
     },
