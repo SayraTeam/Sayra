@@ -1,4 +1,5 @@
 import GhiphyService from '../services/GiphyService';
+import INDEX from './index';
 import moment from 'moment';
 
 export default {
@@ -22,6 +23,7 @@ export default {
             })
     },
     GET_TRENDING_GIFS: ({ commit }) => {
+        INDEX.state.Giphy = [];
         GhiphyService.getTrendingGifs()
             .then(giphy => {
                 let arrayGiphy = [];

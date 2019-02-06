@@ -1,13 +1,4 @@
-/** card **/
-
 body {
     padding-top: 5rem;
 }
 
-/** card **/
-
-@media screen and (max-width: 766px) {
-    .margin {
-        margin-top: 5% !important;
-    }
-}
