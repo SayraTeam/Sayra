@@ -8,14 +8,14 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" :class="{show: show == true}">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="articles">Gifs<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Random">Random<span class="sr-only"></span></a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="articles">Gifs<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="random">Random<span class="sr-only"></span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sticker">Sticker<span class="sr-only"></span></a>
+            <a class="nav-link" href="Sticker">Sticker<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -29,45 +29,35 @@
     </nav>
 
     <div class="container">
-      <div class="row" v-if="this.$store.state.Giphy.length > 0">
+      <div class="row">
         <giphy-data
-          v-for="GD in getGiphyData"
+          v-for="GD in getRandomGiphyData"
           v-bind:giphyData="GD"
           v-bind:key="GD.id">
         </giphy-data>
-      </div>
-      <div class="row d-flex justify-content-center" v-else>
-        <clip-loader :loading="spinner.loading" :color="spinner.color" :size="spinner.size"></clip-loader>
       </div>
     </div>
 </div>
 </template>
 <script>
 import GiphyData from './DataComponents/GiphyData';
-import ClipLoader from 'vue-spinner/src/ClipLoader';
 
 export default {
-    name: 'Home',
+    name: 'Random',
     components: {
-      GiphyData,
-      ClipLoader,
+      GiphyData
     },
     data: function() {
         return {
             show: false,
-            giphyData: this.$store.state.Giphy,
-            spinner: {
-                loading: true,
-                color: '#d9534f',
-                size: '55px',
-            },
+            giphyData: this.$store.state.Giphy
         }
     },
     mounted() {
-      this.$store.dispatch('GET_TRENDING_GIFS');
+      this.$store.dispatch('GET_STICKER');
     },
     computed: {
-        getGiphyData: function() {
+        getRandomGiphyData: function() {
             return this.$store.state.Giphy;
         },
     },
