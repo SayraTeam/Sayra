@@ -1,9 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/Home'
-import Random from '@/components/Random'
-import Sticker from '@/components/Sticker'
-import Test from '@/components/Test'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/Home';
+import Random from '@/components/Random';
+import Sticker from '@/components/Sticker';
 
 Vue.use(Router)
 
@@ -28,11 +27,6 @@ export default new Router({
             path: '/Sticker',
             name: 'Sticker',
             component: Sticker,
-        },
-        {
-            path: '/test',
-            name: 'Test',
-            component: Test,
         },
     ],
 });
