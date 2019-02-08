@@ -20,7 +20,7 @@ workbox.setConfig({
   
   //network request in cache
   workbox.routing.registerRoute(
-    new RegExp('/api/.*\.json'),
+    new RegExp('media*.giphy.com/media/*'),
     workbox.strategies.networkFirst({
       cacheName: 'api',
     }),
