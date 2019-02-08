@@ -25,6 +25,7 @@ workbox.setConfig({
       cacheName: 'api',
     }),
   );
+
   
   //js and css in cache
   workbox.routing.registerRoute(
