@@ -35,16 +35,16 @@
 
 <script>
 export default {
-  name: 'App',
-  data() {
-    return {
-      show: false,
-    }
-  },
-  methods: {
-    showMenu() {
-      this.show = !this.show;
-    }
-  }
+    name: 'App',
+    data() {
+        return {
+            show: false,
+        };
+    },
+    methods: {
+        showMenu() {
+            this.show = !this.show;
+        },
+    },
 };
 </script>

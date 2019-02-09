@@ -20,7 +20,7 @@ export default {
             })
             .catch(error => {
                 throw new Error(error);
-            })
+            });
     },
     GET_TRENDING_GIFS: ({ commit }) => {
         INDEX.state.Giphy = [];
@@ -40,7 +40,7 @@ export default {
             })
             .catch(error => {
                 throw new Error(error);
-            })
+            });
     },
     GET_RANDOM_GIFS: ({ commit }) => {
         GhiphyService.getRandomGifs()
@@ -58,7 +58,7 @@ export default {
             })
             .catch(error => {
                 throw new Error(error);
-            })
+            });
     },
     GET_STICKER: ({ commit }) => {
         GhiphyService.getRandomSticker()
@@ -76,6 +76,6 @@ export default {
             })
             .catch(error => {
                 throw new Error(error);
-            })
-    }
-}
+            });
+    },
+};

@@ -4,14 +4,14 @@ import Home from '@/components/Home';
 import Random from '@/components/Random';
 import Sticker from '@/components/Sticker';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '*', 
-            redirect: '/'
+            path: '*',
+            redirect: '/',
         },
         {
             path: '/',
