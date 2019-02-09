@@ -13,8 +13,7 @@
 </template>
 
 <script>
-import ClipLoader from 'vue-spinner/src/ClipLoader';
-import VLazyImage from "v-lazy-image";
+import VLazyImage from 'v-lazy-image';
 
 export default {
     name: 'giphy-data',
@@ -25,17 +24,16 @@ export default {
                 color: '#d9534f',
                 size: '55px',
             },
-        }
+        };
     },
     props: {
         giphyData: {
             type: Object,
             required: true,
-        }
+        },
     },
     components: {
-        ClipLoader,
         VLazyImage,
-    }
-}
+    },
+};
 </script>

@@ -17,5 +17,5 @@ export default {
 
     getRandomSticker() {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}stickers/random?api_key=${CONSTANTS.API_KEY}`);
-    }
-}
+    },
+};

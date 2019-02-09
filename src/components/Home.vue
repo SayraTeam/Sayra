@@ -13,20 +13,20 @@ import GiphyData from './DataComponents/GiphyData';
 export default {
     name: 'Home',
     components: {
-      GiphyData,
+        GiphyData,
     },
     data: function() {
         return {
             giphyData: this.$store.state.Giphy,
-        }
+        };
     },
     mounted() {
-      this.$store.dispatch('GET_TRENDING_GIFS');
+        this.$store.dispatch('GET_TRENDING_GIFS');
     },
     computed: {
         getGiphyData: function() {
             return this.$store.state.Giphy;
         },
     },
-}
+};
 </script>
