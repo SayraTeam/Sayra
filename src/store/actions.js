@@ -46,7 +46,6 @@ export default {
         GhiphyService.getRandomGifs()
             .then(giphy => {
                 let arrayGiphy = [];
-                console.log(giphy);
                 let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
                 arrayGiphy.push({
                     id: giphy.data.id,
@@ -64,7 +63,6 @@ export default {
         GhiphyService.getRandomSticker()
             .then(giphy => {
                 let arrayGiphy = [];
-                console.log(giphy);
                 let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
                 arrayGiphy.push({
                     id: giphy.data.id,
