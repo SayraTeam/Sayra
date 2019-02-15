@@ -11,7 +11,6 @@ export default {
     },
 
     getRandomGifs() {
-        console.log(`${CONSTANTS.SERVER_ADDRESS}gifs/random?api_key=${CONSTANTS.API_KEY}`);
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/random?api_key=${CONSTANTS.API_KEY}`);
     },
 
