@@ -1,4 +1,15 @@
 module.exports = {
+    configureWebpack: {
+        performance: {
+            hints: false
+        },
+        optimization: {
+            splitChunks: {
+                minSize: 10000,
+                maxSize: 250000,
+            },
+        },
+    },
     pwa: {
         // configure the workbox plugin
         workboxPluginMode: 'InjectManifest',
@@ -22,6 +33,6 @@ module.exports = {
         iconPaths: {
             favicon32: 'img/icons/favicon-32.png',
             favicon16: 'img/icons/favicon-16.png',
-        }
+        },
     },
 };
