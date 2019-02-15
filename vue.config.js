@@ -19,5 +19,9 @@ module.exports = {
                 },
             }],*/
         },
+        iconPaths: {
+            favicon32: 'img/icons/favicon-32.png',
+            favicon16: 'img/icons/favicon-16.png',
+        }
     },
 };
