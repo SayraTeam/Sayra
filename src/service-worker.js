@@ -21,7 +21,7 @@ try {
 
     //network request in cache
     workbox.routing.registerRoute(
-        new RegExp('https://media*.giphy.com/media/*'),
+        new RegExp('media*.giphy.com/media/*'),
         workbox.strategies.networkFirst({
             cacheName: 'api',
         })
