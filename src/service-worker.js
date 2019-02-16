@@ -2,9 +2,9 @@ try {
     workbox.setConfig({
         debug: false,
     });
-      
+
     workbox.precaching.precacheAndRoute([]);
-    
+
     //image in cache
     workbox.routing.registerRoute(
         /\.(?:png|gif|jpg|jpeg|svg)$/,
@@ -18,7 +18,7 @@ try {
             ],
         })
     );
-    
+
     //network request in cache
     workbox.routing.registerRoute(
         new RegExp('https://media*.giphy.com/media/*'),
@@ -26,10 +26,10 @@ try {
             cacheName: 'api',
         })
     );
-    
+
     //js and css in cache
     workbox.routing.registerRoute(/\.(?:js|css)$/, workbox.strategies.staleWhileRevalidate());
-    
+
     //webfont in cache
     workbox.routing.registerRoute(
         new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
@@ -42,7 +42,6 @@ try {
             ],
         })
     );
-} catch(error) {
-    console.error(`Workbox didn't load`)
+} catch (error) {
+    console.error(`Workbox didn't load`);
 }
-

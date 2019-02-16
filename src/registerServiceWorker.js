@@ -1,4 +1,12 @@
 import { register } from 'register-service-worker';
+import alertify from 'alertify.js';
+
+const notifyUserAboutUpdate = worker => {
+    alertify.confirm('new cotent!', () => {
+        worker.postMessage({ action: 'skipWaiting' });
+    });
+};
+
 if (process.env.NODE_ENV === 'production') {
     register(`${process.env.BASE_URL}service-worker.js`, {
         ready() {
@@ -16,8 +24,9 @@ if (process.env.NODE_ENV === 'production') {
         updatefound() {
             console.log('New content is downloading.');
         },
-        updated() {
+        updated(registration) {
             console.log('New content is available; please refresh.');
+            notifyUserAboutUpdate(registration.waiting);
         },
         offline() {
             console.log('your are in offline');
@@ -25,5 +34,12 @@ if (process.env.NODE_ENV === 'production') {
         error(error) {
             console.error('Error during service worker registration:', error);
         },
+    });
+
+    let refreshing;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
     });
 }

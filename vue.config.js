@@ -1,7 +1,8 @@
+const workboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
     configureWebpack: {
         performance: {
-            hints: false
+            hints: false,
         },
         optimization: {
             splitChunks: {
@@ -9,27 +10,25 @@ module.exports = {
                 maxSize: 250000,
             },
         },
+        plugins: [
+            new workboxPlugin.GenerateSW({
+                runtimeCaching: [
+                    {
+                        urlPattern: new RegExp('https://media*.giphy.com/media/*'),
+                        handler: 'networkFirst',
+                        options: {
+                            networkTimeoutSeconds: 20,
+                            cacheName: 'api-cache',
+                            cacheableResponse: {
+                                statuses: [0, 200],
+                            },
+                        },
+                    },
+                ],
+            }),
+        ],
     },
     pwa: {
-        // configure the workbox plugin
-        workboxPluginMode: 'InjectManifest',
-        workboxOptions: {
-            // swSrc is required in InjectManifest mode.
-            swSrc: 'public/service-worker.js',
-            //skipWaiting: true,
-            //navigateFallback: '/index.html',
-            /*runtimeCaching: [{
-                urlPattern: new RegExp('https://media*.giphy.com/media/*'),
-                handler: 'networkFirst',
-                options: {
-                    networkTimeoutSeconds: 20,
-                    cacheName: 'api-cache',
-                    cacheableResponse: {
-                        statuses: [0, 200],
-                    },
-                },
-            }],*/
-        },
         iconPaths: {
             favicon32: 'img/icons/favicon-32.png',
             favicon16: 'img/icons/favicon-16.png',
