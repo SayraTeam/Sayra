@@ -1,7 +1,7 @@
 <template>
 <div>
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-danger fixed-top">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" v-on:click="showMenu">
+      <button class="navbar-toggler navbar-toggler-right" name="toggler" type="button" data-toggle="collapse" v-on:click="showMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="/">Sayra</a>

@@ -20,7 +20,9 @@ if (process.env.NODE_ENV === 'production') {
         updated() {
             console.log('New content is available; please refresh.');
         },
-        offline() {},
+        offline() {
+            console.log('your are in offline');
+        },
         error(error) {
             console.error('Error during service worker registration:', error);
         },
