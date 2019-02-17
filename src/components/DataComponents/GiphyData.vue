@@ -2,7 +2,7 @@
     <div class="col-md-4">
          <div class="card mb-4 bg-dark text-white">
             <!--<img class="card-img" v-bind:src="giphyData.image.url" alt="Card image">-->
-            <v-lazy-image class="card-img" v-bind:src="giphyData.image.url" src-placeholder="./img/default2.png"/>
+            <v-lazy-image class="card-img" alt="giphy card" v-bind:src="giphyData.image.url" src-placeholder="./img/default2.png"/>
             <div class="card-img-overlay">
                <h5 class="card-title">{{ giphyData.title }}</h5>
                <p class="card-text"><small> {{ giphyData.date_import }} </small></p>
