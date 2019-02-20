@@ -10,7 +10,7 @@ export default {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/trending?api_key=${CONSTANTS.API_KEY}`);
     },
 
-    getRandomGif() {
+    getRandomGifs() {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/random?api_key=${CONSTANTS.API_KEY}`);
     },
 
@@ -20,4 +20,4 @@ export default {
     getSearchGif(text) {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/search?q=${text}&api_key=${CONSTANTS.API_KEY}`);
     }
-}
+};

@@ -31,7 +31,6 @@
         </giphy-data>
       </div>
     </div>
-</div>
 </template>
 <script>
 import GiphyData from './DataComponents/GiphyData';
@@ -39,7 +38,7 @@ import GiphyData from './DataComponents/GiphyData';
 export default {
     name: 'Home',
     components: {
-      GiphyData
+        GiphyData,
     },
     data: function () {
         return {
@@ -47,10 +46,9 @@ export default {
             giphyData: this.$store.state.Giphy,
             textToSearch: null
         }
-
     },
     mounted() {
-      this.$store.dispatch('GET_TRENDING_GIFS');
+        this.$store.dispatch('GET_TRENDING_GIFS');
     },
     computed: {
         getGiphyData: function() {
@@ -67,4 +65,3 @@ export default {
       }
     }
 }
-</script>

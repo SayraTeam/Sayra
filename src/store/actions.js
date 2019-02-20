@@ -1,4 +1,5 @@
 import GhiphyService from '../services/GiphyService';
+import INDEX from './index';
 import moment from 'moment';
 
 export default {
@@ -19,9 +20,10 @@ export default {
             })
             .catch(error => {
                 throw new Error(error);
-            })
+            });
     },
     GET_TRENDING_GIFS: ({ commit }) => {
+        INDEX.state.Giphy = [];
         GhiphyService.getTrendingGifs()
             .then(giphy => {
                 let arrayGiphy = [];
@@ -38,6 +40,20 @@ export default {
             })
             .catch(error => {
                 throw new Error(error);
+            });
+    },
+    GET_RANDOM_GIFS: ({ commit }) => {
+        GhiphyService.getRandomGifs()
+            .then(giphy => {
+                let arrayGiphy = [];
+                let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
+                arrayGiphy.push({
+                    id: giphy.data.id,
+                    title: giphy.data.title,
+                    date_import: datetimeFR,
+                    image: giphy.data.images.fixed_height,
+                });
+                commit('ADD_GIPHY', arrayGiphy);
             })
     },
     GET_SEARCH_GIF: ({ commit}, text) => {
@@ -52,11 +68,25 @@ export default {
                         date_import: datetimeFR,
                         image: element.images.fixed_height,
                     });
+            .catch(error => {
+                throw new Error(error);
+            });
+    },
+    GET_STICKER: ({ commit }) => {
+        GhiphyService.getRandomSticker()
+            .then(giphy => {
+                let arrayGiphy = [];
+                let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
+                arrayGiphy.push({
+                    id: giphy.data.id,
+                    title: giphy.data.title,
+                    date_import: datetimeFR,
+                    image: giphy.data.images.fixed_height,
                 });
                 commit('ADD_GIPHY', arrayGiphy);
             })
             .catch(error => {
                 console.log(error);
             })
-    }
-}
+    },
+};

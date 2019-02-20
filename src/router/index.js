@@ -1,16 +1,17 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/Home'
-import Test from '@/components/Test'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/Home';
+import Random from '@/components/Random';
+import Sticker from '@/components/Sticker';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '*', 
-            redirect: '/'
+            path: '*',
+            redirect: '/',
         },
         {
             path: '/',
@@ -18,9 +19,14 @@ export default new Router({
             component: Home,
         },
         {
-            path: '/test',
-            name: 'Test',
-            component: Test,
+            path: '/Random',
+            name: 'Random',
+            component: Random,
+        },
+        {
+            path: '/Sticker',
+            name: 'Sticker',
+            component: Sticker,
         },
     ],
 });
