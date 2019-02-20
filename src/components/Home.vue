@@ -15,10 +15,10 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="textToSearch">
+          <button class="btn btn-primary my-2 my-sm-0" v-on:click="search">Search</button>
+        </div>
       </div>
     </nav>
 
@@ -41,11 +41,13 @@ export default {
     components: {
       GiphyData
     },
-    data: function() {
+    data: function () {
         return {
             show: false,
-            giphyData: this.$store.state.Giphy
+            giphyData: this.$store.state.Giphy,
+            textToSearch: null
         }
+
     },
     mounted() {
       this.$store.dispatch('GET_TRENDING_GIFS');
@@ -58,6 +60,10 @@ export default {
     methods: {
       showMenu() {
         this.show = !this.show;
+      },
+      search() {
+          console.log(this.textToSearch)
+          this.$store.dispatch('GET_SEARCH_GIF', this.textToSearch)
       }
     }
 }

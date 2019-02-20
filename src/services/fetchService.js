@@ -4,7 +4,6 @@ export default {
         let init = {
             method: 'GET',
             headers: myHeaders,
-            mode: 'cors',
             cache: 'default',
         }
         let request = new Request(url, init);
