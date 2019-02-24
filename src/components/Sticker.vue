@@ -15,7 +15,7 @@ export default {
     components: {
         GiphyData,
     },
-    data: function() {
+    data() {
         return {
             show: false,
             giphyData: this.$store.state.Giphy,
