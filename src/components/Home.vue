@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container page-moveFromRight">
       <div class="row">
         <giphy-data
           v-for="GD in getGiphyData"

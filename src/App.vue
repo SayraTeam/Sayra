@@ -29,7 +29,7 @@
         </form>
       </div>
     </nav>
-    <div class="container page-moveFromRight">
+    <div class="container">
       <router-view/>
     </div>
 </div>
