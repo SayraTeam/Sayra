@@ -9,16 +9,16 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" :class="{show: show == true}">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item  active">
-            <a class="nav-link" name="home" href="/">Gifs<span class="sr-only">(current)</span></a>
+            <router-link class="nav-link" to="Home">Gifs</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" name="random" href="Random">Random<span class="sr-only"></span></a>
+            <router-link class="nav-link" to="Random">Random</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" name="sticker" href="Sticker">Sticker<span class="sr-only"></span></a>
+            <router-link class="nav-link" to="Sticker">Sticker</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <router-link class="nav-link" to="Contact">Contact</router-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
