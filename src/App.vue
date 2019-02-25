@@ -4,7 +4,7 @@
       <button class="navbar-toggler navbar-toggler-right" name="toggler" type="button" data-toggle="collapse" v-on:click="showMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="Home">Sayra</a>
+      <router-link class="navbar-brand" to="/">Sayra</router-link>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" :class="{show: show == true}">
         <ul class="navbar-nav mr-auto">
