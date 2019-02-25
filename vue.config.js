@@ -1,5 +1,6 @@
 const workboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
+    baseUrl: '/',
     configureWebpack: {
         performance: {
             hints: false,
