@@ -7,8 +7,8 @@ body {
 }
 
 .page-moveFromRight {
-    -webkit-animation: moveFromRight .6s ease both;
-	animation: moveFromRight .6s ease both;
+    -webkit-animation: moveFromRight 1s ease both;
+	animation: moveFromRight 1s ease both;
 }
 .page-moveToRight {
     -webkit-animation: moveToRight .6s ease both;
