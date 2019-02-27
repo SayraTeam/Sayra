@@ -1,5 +1,6 @@
 const workboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
+    baseUrl: '/',
     configureWebpack: {
         performance: {
             hints: false,
@@ -14,7 +15,7 @@ module.exports = {
             new workboxPlugin.GenerateSW({
                 runtimeCaching: [
                     {
-                        urlPattern: new RegExp('media*.giphy.com/media/*'),
+                        urlPattern: new RegExp('https://media*.giphy.com/media/*/*.gif'),
                         handler: 'networkFirst',
                         options: {
                             networkTimeoutSeconds: 20,

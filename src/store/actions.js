@@ -43,15 +43,30 @@ export default {
             });
     },
     GET_RANDOM_GIFS: ({ commit }) => {
-        GhiphyService.getRandomGifs()
+        GhiphyService.getRandomGifs().then(giphy => {
+            let arrayGiphy = [];
+            let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
+            arrayGiphy.push({
+                id: giphy.data.id,
+                title: giphy.data.title,
+                date_import: datetimeFR,
+                image: giphy.data.images.fixed_height,
+            });
+            commit('ADD_GIPHY', arrayGiphy);
+        });
+    },
+    GET_SEARCH_GIF: ({ commit }, text) => {
+        GhiphyService.getSearchGif(text)
             .then(giphy => {
                 let arrayGiphy = [];
-                let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
-                arrayGiphy.push({
-                    id: giphy.data.id,
-                    title: giphy.data.title,
-                    date_import: datetimeFR,
-                    image: giphy.data.images.fixed_height,
+                giphy.data.forEach(element => {
+                    let datetimeFR = moment(element.import_datetime).format('DD/MM/YYYY HH:mm');
+                    arrayGiphy.push({
+                        id: element.id,
+                        title: element.title,
+                        date_import: datetimeFR,
+                        image: element.images.fixed_height,
+                    });
                 });
                 commit('ADD_GIPHY', arrayGiphy);
             })
@@ -73,7 +88,7 @@ export default {
                 commit('ADD_GIPHY', arrayGiphy);
             })
             .catch(error => {
-                throw new Error(error);
+                console.log(error);
             });
     },
 };
