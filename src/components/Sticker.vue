@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
     <div class="row page-moveFromRight">
+=======
+    <div class="row">
+>>>>>>> fb034749d9b8576496dae524bc2f859c90c20f6c
       <giphy-data
         v-for="GD in getRandomGiphyData"
         v-bind:giphyData="GD"
@@ -15,7 +19,11 @@ export default {
     components: {
         GiphyData,
     },
+<<<<<<< HEAD
     data() {
+=======
+    data: function() {
+>>>>>>> fb034749d9b8576496dae524bc2f859c90c20f6c
         return {
             show: false,
             giphyData: this.$store.state.Giphy,

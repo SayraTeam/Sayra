@@ -10,11 +10,14 @@ export default {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/trending?api_key=${CONSTANTS.API_KEY}`);
     },
 
-    getRandomGif() {
+    getRandomGifs() {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/random?api_key=${CONSTANTS.API_KEY}`);
     },
 
     getRandomSticker() {
         return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}stickers/random?api_key=${CONSTANTS.API_KEY}`);
+    },
+    getSearchGif(text) {
+        return fetchService.fetchGET(`${CONSTANTS.SERVER_ADDRESS}gifs/search?q=${text}&api_key=${CONSTANTS.API_KEY}`);
     }
-}
+};

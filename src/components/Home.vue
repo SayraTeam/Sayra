@@ -9,16 +9,16 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault" :class="{show: show == true}">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="articles">Gifs<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="articles">Giphe<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="textToSearch">
+          <button class="btn btn-primary my-2 my-sm-0" v-on:click="search">Search</button>
+        </div>
       </div>
     </nav>
 
@@ -31,7 +31,6 @@
         </giphy-data>
       </div>
     </div>
-</div>
 </template>
 <script>
 import GiphyData from './DataComponents/GiphyData';
@@ -39,16 +38,17 @@ import GiphyData from './DataComponents/GiphyData';
 export default {
     name: 'Home',
     components: {
-      GiphyData
+        GiphyData,
     },
-    data: function() {
+    data: function () {
         return {
             show: false,
-            giphyData: this.$store.state.Giphy
+            giphyData: this.$store.state.Giphy,
+            textToSearch: null
         }
     },
     mounted() {
-      this.$store.dispatch('GET_TRENDING_GIFS');
+        this.$store.dispatch('GET_TRENDING_GIFS');
     },
     computed: {
         getGiphyData: function() {
@@ -58,7 +58,10 @@ export default {
     methods: {
       showMenu() {
         this.show = !this.show;
+      },
+      search() {
+          console.log(this.textToSearch)
+          this.$store.dispatch('GET_SEARCH_GIF', this.textToSearch)
       }
     }
 }
-</script>
