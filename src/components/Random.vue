@@ -1,9 +1,13 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <div class="row page-moveFromRight">
 =======
   <div class="row">
 >>>>>>> fb034749d9b8576496dae524bc2f859c90c20f6c
+=======
+  <div class="row page-moveFromRight">
+>>>>>>> tibdev78-master
     <giphy-data
       v-for="GD in getRandomGiphyData"
       v-bind:giphyData="GD"
@@ -20,10 +24,14 @@ export default {
         GiphyData,
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     data() {
 =======
     data: function() {
 >>>>>>> fb034749d9b8576496dae524bc2f859c90c20f6c
+=======
+    data() {
+>>>>>>> tibdev78-master
         return {
             show: false,
             giphyData: this.$store.state.Giphy,

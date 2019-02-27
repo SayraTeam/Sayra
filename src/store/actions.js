@@ -43,20 +43,19 @@ export default {
             });
     },
     GET_RANDOM_GIFS: ({ commit }) => {
-        GhiphyService.getRandomGifs()
-            .then(giphy => {
-                let arrayGiphy = [];
-                let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
-                arrayGiphy.push({
-                    id: giphy.data.id,
-                    title: giphy.data.title,
-                    date_import: datetimeFR,
-                    image: giphy.data.images.fixed_height,
-                });
-                commit('ADD_GIPHY', arrayGiphy);
-            })
+        GhiphyService.getRandomGifs().then(giphy => {
+            let arrayGiphy = [];
+            let datetimeFR = moment(giphy.data.import_datetime).format('DD/MM/YYYY HH:mm');
+            arrayGiphy.push({
+                id: giphy.data.id,
+                title: giphy.data.title,
+                date_import: datetimeFR,
+                image: giphy.data.images.fixed_height,
+            });
+            commit('ADD_GIPHY', arrayGiphy);
+        });
     },
-    GET_SEARCH_GIF: ({ commit}, text) => {
+    GET_SEARCH_GIF: ({ commit }, text) => {
         GhiphyService.getSearchGif(text)
             .then(giphy => {
                 let arrayGiphy = [];
@@ -68,6 +67,9 @@ export default {
                         date_import: datetimeFR,
                         image: element.images.fixed_height,
                     });
+                });
+                commit('ADD_GIPHY', arrayGiphy);
+            })
             .catch(error => {
                 throw new Error(error);
             });
@@ -87,6 +89,6 @@ export default {
             })
             .catch(error => {
                 console.log(error);
-            })
+            });
     },
 };

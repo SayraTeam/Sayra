@@ -19,9 +19,6 @@ npm run serve
 # build for the production with vue-cli
 npm run build
 
-#launch preprod
-npm run serve
-
 # compile production for heroku
 npm run postinstall
 
