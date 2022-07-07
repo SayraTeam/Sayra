@@ -15,7 +15,7 @@
     "express": "^4.16.4",
     "express-sslify": "^1.2.0",
     "install": "^0.12.2",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "npm": "^6.7.0",
     "path": "^0.12.7",
     "register-service-worker": "^1.5.2",
